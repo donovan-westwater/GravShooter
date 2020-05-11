@@ -46,7 +46,7 @@ public class ProjectileLogic : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
         {
             Destroy(collision.gameObject);
         }

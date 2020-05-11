@@ -925,6 +925,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
         type: 3}
+      propertyPath: inputs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
       propertyPath: inputs.Array.data[0]
       value: Horizontal_P2
       objectReference: {fileID: 0}
@@ -944,6 +949,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8754924512723806105, guid: 436d47f7319f5364fa76426c0e7a764c,
         type: 3}
+    - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: inputs.Array.data[3]
+      value: AimX_P2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: inputs.Array.data[4]
+      value: AimY_P2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 628bfe4b1af0b0347a54f3c4a7d39535, type: 3}
 --- !u!1 &1611622668 stripped
@@ -1370,6 +1385,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
         type: 3}
+      propertyPath: inputs.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
       propertyPath: proj
       value: 
       objectReference: {fileID: 8754924512723806105, guid: 436d47f7319f5364fa76426c0e7a764c,
@@ -1388,6 +1408,16 @@ PrefabInstance:
         type: 3}
       propertyPath: inputs.Array.data[2]
       value: Fire1_P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: inputs.Array.data[3]
+      value: AimX_P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: inputs.Array.data[4]
+      value: AimY_P1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 628bfe4b1af0b0347a54f3c4a7d39535, type: 3}

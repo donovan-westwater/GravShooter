@@ -9,7 +9,7 @@ public class Controls : MonoBehaviour
     bool down = false;
     public Vector3 velo = new Vector2(0, 0);
     public float speed = 5f;
-    [SerializeField] string[] inputs = new string[3];
+    [SerializeField] string[] inputs = new string[5];
     float charge = 0;
     public GameObject proj;
     GameObject cur;
@@ -42,9 +42,20 @@ public class Controls : MonoBehaviour
         //else if (v > 0) grav = new Vector3(0, 1f, 0);
         velo = ((veloIN.normalized+ grav.normalized)*speed);
         this.transform.Translate(velo * Time.deltaTime);
-        
+
         //Aiming Contorls [Covert the mouse controls into the input system]
-        Vector3 mouseVect = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y);
+        Vector3 mouseVect;
+        if (this.gameObject.tag == "Player") { 
+            mouseVect = new Vector3(Camera.main.ScreenToWorldPoint(Input.mousePosition).x - transform.position.x, Camera.main.ScreenToWorldPoint(Input.mousePosition).y - transform.position.y);
+        }
+        else
+        {
+            //print("Controller X: " + Input.GetAxisRaw(inputs[3])+" Controller X: " + Input.GetAxisRaw(inputs[4]));
+            Vector3 aimDir = new Vector3(aimRet.transform.position.x - transform.position.x, aimRet.transform.position.y - transform.position.y);
+            Vector3 inputDir = new Vector3(Input.GetAxisRaw(inputs[3]), Input.GetAxisRaw(inputs[4]));
+            mouseVect = aimDir + inputDir.normalized;
+        }
+        
         Vector3 currentDir = new Vector3(aimRet.transform.position.x - transform.position.x, aimRet.transform.position.y - transform.position.y);
         float angleTemp = Mathf.Acos(Vector3.Dot(currentDir, mouseVect) / (currentDir.magnitude * mouseVect.magnitude)); //Is in Radians!
         if (Vector3.Cross(mouseVect.normalized, currentDir.normalized).z < 0 && angleTemp > Mathf.Abs(0.01f))
