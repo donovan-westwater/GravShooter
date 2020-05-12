@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 using UnityEngine;
 
 public class Controls : MonoBehaviour
@@ -16,17 +17,20 @@ public class Controls : MonoBehaviour
     //Aiming Variables
     Vector2 aimDir;
     Transform aimRet;
+    GameObject manager; //new
     // Start is called before the first frame update
     void Start()
     {
         aimRet = this.transform.GetChild(0);
         aimDir = aimRet.transform.position - this.transform.position;
+        manager = GameObject.Find("Game Manager"); //new
     }
 
     // Update is called once per frame
     //TODO: Change gravity to work via button press
     void Update()
     {
+        if (manager.GetComponent<Manager>().outGame == true) return; //new
         //Replace literal strings with inputs from the array
         float h = Input.GetAxisRaw(inputs[0]); //Horizontal
         //float v = Input.GetAxisRaw("Vertical");

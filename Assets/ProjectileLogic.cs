@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProjectileLogic : MonoBehaviour
 {
@@ -11,8 +12,15 @@ public class ProjectileLogic : MonoBehaviour
     public Vector2 velo = new Vector2(0,0);
     public bool fired = false;
     float timer = 5;
+    //Text text;
+    GameObject win;
+    GameObject manager;
     void Start()
     {
+        //win = GameObject.Find("WinBackground");
+        manager = GameObject.Find("Game Manager");
+        win = manager.GetComponent<Manager>().win;
+        //text = GameObject.Find("Win Text").GetComponent<Text>();
         sprite = this.GetComponent<SpriteRenderer>();
         //ogSize = sprite.size;
         ogSize = this.transform.localScale;
@@ -48,6 +56,29 @@ public class ProjectileLogic : MonoBehaviour
         }
         if (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Player2")
         {
+            if(collision.gameObject.tag == "Player")
+            {
+               // win = GameObject.Find("WinBackground");
+                win.SetActive(true);
+                manager.GetComponent<Manager>().p2Wins += 1;
+                win.transform.GetChild(0).GetComponent<Text>().text = "Player 2 has won this game! Press Enter key or A/X button to restart!\n";
+                win.transform.GetChild(0).GetComponent<Text>().text += "Player 1 wins: " + manager.GetComponent<Manager>().p1Wins+"\n";
+                win.transform.GetChild(0).GetComponent<Text>().text += "Player 2 wins: " + manager.GetComponent<Manager>().p2Wins+"\n";
+                manager.GetComponent<Manager>().outGame = true;
+                manager.GetComponent<Manager>().gameOver = true;
+            }
+            else
+            {
+                //win.SetActive(true);
+                //win = GameObject.Find("WinBackground");
+                win.SetActive(true);
+                manager.GetComponent<Manager>().p1Wins += 1;
+                win.transform.GetChild(0).GetComponent<Text>().text = "Player 1 has won this game! Press the Enter key or A/X button to restart!\n";
+                win.transform.GetChild(0).GetComponent<Text>().text += "Player 1 wins: " + manager.GetComponent<Manager>().p1Wins + "\n";
+                win.transform.GetChild(0).GetComponent<Text>().text += "Player 2 wins: " + manager.GetComponent<Manager>().p2Wins + "\n";
+                manager.GetComponent<Manager>().outGame = true;
+                manager.GetComponent<Manager>().gameOver = true;
+            }
             Destroy(collision.gameObject);
         }
         if (collision.gameObject.tag == "Wall") Destroy(this.gameObject);
@@ -55,6 +86,7 @@ public class ProjectileLogic : MonoBehaviour
     private void OnCollisionStay2D(Collision2D collision)
     {
         if (!fired) return;
+
         if (collision.gameObject.tag == "Projectile")
         {
             float otherC = collision.gameObject.GetComponent<ProjectileLogic>().charge;
