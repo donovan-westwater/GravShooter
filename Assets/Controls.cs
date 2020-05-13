@@ -97,6 +97,7 @@ public class Controls : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (collision.gameObject.tag != "Wall") return;
         ContactPoint2D[] points = new ContactPoint2D[500];
         collision.GetContacts(points);
         ContactPoint2D? prevP = null;
@@ -113,4 +114,24 @@ public class Controls : MonoBehaviour
         //this.transform.Translate(-velo * Time.deltaTime);
         grav = new Vector3(0, 0, 0);
     }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag != "Wall") return;
+        ContactPoint2D[] points = new ContactPoint2D[500];
+        collision.GetContacts(points);
+        ContactPoint2D? prevP = null;
+        foreach (ContactPoint2D p in points)
+        {
+            if (p.collider == null) continue;
+            if (prevP != null && Mathf.Abs(prevP.Value.point.y - p.point.y) > 0.1f)
+            {
+                return;
+            }
+            prevP = p;
+        }
+        if (down) grav = new Vector3(0, 1f, 0);
+        else grav = new Vector3(0, -1f, 0);
+    }
+
 }
+
