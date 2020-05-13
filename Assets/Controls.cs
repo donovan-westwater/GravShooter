@@ -110,6 +110,9 @@ public class Controls : MonoBehaviour
             }
             prevP = p;
         }
+        //Making sure the surface is actually "Under" the player
+        if (points[0].point.y - this.transform.position.y < 0 && down) return;
+        if (points[0].point.y - this.transform.position.y > 0 && !down) return;
         //velo = new Vector3(0, 0, 0);
         //this.transform.Translate(-velo * Time.deltaTime);
         grav = new Vector3(0, 0, 0);

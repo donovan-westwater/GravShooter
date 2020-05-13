@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.069
       objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
@@ -186,7 +186,7 @@ PrefabInstance:
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.92515
+      value: 0.9325512
       objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
@@ -466,7 +466,7 @@ PrefabInstance:
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.109
       objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
@@ -516,7 +516,7 @@ PrefabInstance:
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.91885
+      value: 0.9606356
       objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
@@ -1896,7 +1896,7 @@ MonoBehaviour:
     R2/L2 for controller). \nThe more charged the shot, the faster is moves. If a
     shot hits another shot, \nit they will reduce eachothers charge, slowing thme
     or even negating the shot outright.\n\nYou can change gravity with the jump button
-    (W/S for keyboard, R1/L1 for controller).\nYou can move the players left and
+    (space for keyboard, R1/L1 for controller).\nYou can move the players left and
     right with A/D on keyboard and the left stick on a controller.\nYou can aim with
     the mouse on keyboard and \nwith the right stick on a controller\n[Press the
     Enter key or X/A on controller to start the game]"
