@@ -37,6 +37,7 @@ public class ProjectileLogic : MonoBehaviour
             //Add timer to destory self
             timer -= 1 * Time.deltaTime;
             if (timer < 0) Destroy(this.gameObject);
+            //if (charge < 0) Destroy(this.gameObject);
         }
 
     }
@@ -47,9 +48,9 @@ public class ProjectileLogic : MonoBehaviour
         if(collision.gameObject.tag == "Projectile")
         {
             float otherC = collision.gameObject.GetComponent<ProjectileLogic>().charge;
-            collision.gameObject.GetComponent<ProjectileLogic>().charge = otherC - charge;
-            //this.charge = charge - otherC;
-            if(charge < 0)
+            //collision.gameObject.GetComponent<ProjectileLogic>().charge = otherC - charge;
+            this.charge = charge - Mathf.Abs(otherC);
+            if(charge <= 0)
             {
                 Destroy(this.gameObject);
             }
@@ -90,9 +91,9 @@ public class ProjectileLogic : MonoBehaviour
         if (collision.gameObject.tag == "Projectile")
         {
             float otherC = collision.gameObject.GetComponent<ProjectileLogic>().charge;
-            collision.gameObject.GetComponent<ProjectileLogic>().charge = otherC - charge;
-            //this.charge = charge - otherC;
-            if (charge < 0)
+            //collision.gameObject.GetComponent<ProjectileLogic>().charge = otherC - charge;
+            this.charge = charge - Mathf.Abs(otherC);
+            if (charge <= 0)
             {
                 Destroy(this.gameObject);
             }
