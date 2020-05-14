@@ -11,7 +11,7 @@ public class ProjectileLogic : MonoBehaviour
     public float charge = 0;
     public Vector2 velo = new Vector2(0,0);
     public bool fired = false;
-    float timer = 5;
+    float timer = 6;
     //Text text;
     GameObject win;
     GameObject manager;
@@ -82,7 +82,25 @@ public class ProjectileLogic : MonoBehaviour
             }
             Destroy(collision.gameObject);
         }
-        if (collision.gameObject.tag == "Wall") Destroy(this.gameObject);
+        if (!fired) return;
+        if (collision.gameObject.tag == "Wall")
+        {
+            //Destroy(this.gameObject);
+            ContactPoint2D point = collision.GetContact(0);
+            //Checks to see if the projectile hit a wall horizontally or vertically so it can get the right normal for reflecting
+            if(Mathf.Abs(point.point.y - transform.position.y) > Mathf.Abs(point.point.x - transform.position.x))
+            {
+                this.velo.y = -this.velo.y;
+            }
+            else if(Mathf.Abs(point.point.y - transform.position.y) < Mathf.Abs(point.point.x - transform.position.x))
+            {
+                this.velo.x = -this.velo.x;
+            }
+            else
+            {
+                this.velo = -this.velo;
+            }
+        }
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -102,6 +120,7 @@ public class ProjectileLogic : MonoBehaviour
         {
             Destroy(collision.gameObject);
         }
+        if (!fired) return;
         if (collision.gameObject.tag == "Wall") Destroy(this.gameObject);
     }
 }
