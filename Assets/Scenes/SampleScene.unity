@@ -1294,7 +1294,7 @@ PrefabInstance:
         type: 3}
       propertyPath: proj
       value: 
-      objectReference: {fileID: 8754924512723806105, guid: 436d47f7319f5364fa76426c0e7a764c,
+      objectReference: {fileID: 8582892926231883263, guid: f6e8da67f36e0184b875197f187caed5,
         type: 3}
     - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
         type: 3}
@@ -1753,6 +1753,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FlipX
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490665, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.75294125
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490665, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.0627451
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490665, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.0627451
       objectReference: {fileID: 0}
     - target: {fileID: 4708005140231490666, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
         type: 3}

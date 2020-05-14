@@ -44,7 +44,7 @@ public class ProjectileLogic : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (!fired) return;
+       // if (!fired) return;
         if(collision.gameObject.tag == "Projectile")
         {
             float otherC = collision.gameObject.GetComponent<ProjectileLogic>().charge;
@@ -86,7 +86,7 @@ public class ProjectileLogic : MonoBehaviour
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (!fired) return;
+       // if (!fired) return;
 
         if (collision.gameObject.tag == "Projectile")
         {
