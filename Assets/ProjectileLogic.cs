@@ -34,11 +34,12 @@ public class ProjectileLogic : MonoBehaviour
         this.transform.localScale = ogSize * (1 + charge);
         if (fired)
         {
-            if (isDown != player.down) velo.y = 0; //NEW NON GRAVITY SYSTEM was velo.y = -velo.y
+            //if (isDown != player.down) velo.y = 0; //NEW NON GRAVITY SYSTEM was velo.y = -velo.y
             if (player.down) grav = new Vector2(0, 1f); //NEW
             else grav = new Vector2(0, -1f); //NEW
-            this.transform.Translate(velo.normalized*charge*10* Time.deltaTime);
-            velo += grav.normalized*1.5f*Time.deltaTime; //NEW Controls Gravity!
+            velo = velo.normalized * charge;
+            velo += grav.normalized * 1.5f * Time.deltaTime; //NEW Controls Gravity!
+            this.transform.Translate(velo*10* Time.deltaTime);
             //Add timer to destory self
             timer -= 1 * Time.deltaTime;
             if (timer < 0) Destroy(this.gameObject);
