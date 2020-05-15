@@ -6,10 +6,10 @@ using UnityEngine;
 public class Controls : MonoBehaviour
 {
     //Movement Variables
-    Vector3 grav = new Vector3(0, -1f, 0);
-    bool down = false;
+    public Vector3 grav = new Vector3(0, -1f, 0);
+    public bool down = false;
     public Vector3 velo = new Vector2(0, 0);
-    public float speed = 20f; //5
+    public float speed = 5f;
     [SerializeField] string[] inputs = new string[5];
     float charge = 0;
     public GameObject proj;
@@ -80,6 +80,7 @@ public class Controls : MonoBehaviour
                 cur = Instantiate(proj, this.transform.GetChild(0).transform.position + currentDir.normalized * 2, proj.transform.rotation);
                 Physics2D.IgnoreCollision(cur.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
             }
+            cur.GetComponent<ProjectileLogic>().player = this; //NEW
             cur.GetComponent<ProjectileLogic>().charge = charge;
             cur.transform.position = this.transform.GetChild(0).transform.position + currentDir.normalized * 0.5f;
         }
