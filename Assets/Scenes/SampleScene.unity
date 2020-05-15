@@ -975,7 +975,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 15.562961
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1109,7 +1109,7 @@ PrefabInstance:
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.396
+      value: -7.47
       objectReference: {fileID: 0}
     - target: {fileID: 6131350783368564220, guid: dfd468cc4b0aa1c4593f470d3902616d,
         type: 3}
@@ -1382,7 +1382,7 @@ PrefabInstance:
     - target: {fileID: 800315945268875804, guid: 2802f6754e48f774f9a0230c0419aa8f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 800315945268875804, guid: 2802f6754e48f774f9a0230c0419aa8f,
         type: 3}
@@ -1432,7 +1432,7 @@ PrefabInstance:
     - target: {fileID: 800315945268875804, guid: 2802f6754e48f774f9a0230c0419aa8f,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 251.17142
+      value: 351.75458
       objectReference: {fileID: 0}
     - target: {fileID: 800315945268875804, guid: 2802f6754e48f774f9a0230c0419aa8f,
         type: 3}
@@ -1919,7 +1919,7 @@ MonoBehaviour:
   m_Text: "The goal of this game is to defeat the other player by hitting them with
     a shot. \nYou can charge the shots with the fire button\n (Left click for keyboard,
     R2/L2 for controller). \nThe more charged the shot, the faster is moves. If a
-    shot hits another shot, \nit they will reduce eachothers charge, slowing thme
+    shot hits another shot, \nit they will reduce eachothers charge, slowing them
     or even negating the shot outright.\n\nYou can change gravity with the jump button
     (space for keyboard, R1/L1 for controller).\nYou can move the players left and
     right with A/D on keyboard and the left stick on a controller.\nYou can aim with
