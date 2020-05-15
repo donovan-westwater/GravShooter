@@ -1306,6 +1306,11 @@ PrefabInstance:
       propertyPath: inputs.Array.data[4]
       value: AimY_P2
       objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: speed
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 628bfe4b1af0b0347a54f3c4a7d39535, type: 3}
 --- !u!1 &1611622668 stripped
@@ -1864,6 +1869,11 @@ PrefabInstance:
         type: 3}
       propertyPath: inputs.Array.data[4]
       value: AimY_P1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4708005140231490671, guid: 628bfe4b1af0b0347a54f3c4a7d39535,
+        type: 3}
+      propertyPath: speed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 628bfe4b1af0b0347a54f3c4a7d39535, type: 3}

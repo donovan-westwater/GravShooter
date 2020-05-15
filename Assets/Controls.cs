@@ -9,7 +9,7 @@ public class Controls : MonoBehaviour
     Vector3 grav = new Vector3(0, -1f, 0);
     bool down = false;
     public Vector3 velo = new Vector2(0, 0);
-    public float speed = 5f;
+    public float speed = 20f; //5
     [SerializeField] string[] inputs = new string[5];
     float charge = 0;
     public GameObject proj;
